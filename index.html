@@ -10,6 +10,72 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<style>
+			/* ── Project card image styles ── */
+			.box.style2 .image.featured {
+				display: block;
+				overflow: hidden;
+				border-radius: 6px 6px 0 0;
+				/* fixed height so all cards align */
+				height: 200px;
+			}
+
+			.box.style2 .image.featured img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;          /* fills the box, no distortion   */
+				object-position: center;
+				transition: transform 0.4s ease, filter 0.4s ease;
+				filter: brightness(0.92);
+			}
+
+			.box.style2:hover .image.featured img {
+				transform: scale(1.05);
+				filter: brightness(1);
+			}
+
+			/* ── Overlay label so the placeholder images read clearly ── */
+			.box.style2 .image-wrapper {
+				position: relative;
+				height: 200px;
+				overflow: hidden;
+				border-radius: 6px 6px 0 0;
+			}
+
+			.box.style2 .image-wrapper img {
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
+				object-position: center;
+				transition: transform 0.4s ease, filter 0.4s ease;
+				filter: brightness(0.75) saturate(0.8);
+			}
+
+			.box.style2:hover .image-wrapper img {
+				transform: scale(1.06);
+				filter: brightness(0.9) saturate(1);
+			}
+
+			/* Coloured banner overlay — replace placeholder with real project image later */
+			.box.style2 .image-wrapper .img-placeholder {
+				position: absolute;
+				inset: 0;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				font-size: 3rem;
+				color: rgba(255,255,255,0.85);
+				background: linear-gradient(135deg, var(--ph-color-a), var(--ph-color-b));
+				letter-spacing: 0.05em;
+				font-weight: 700;
+			}
+
+			/* Per-card accent colours (swap once real images are in) */
+			#proj-stent    { --ph-color-a: #1a6b8a; --ph-color-b: #0d3b52; }
+			#proj-swelling { --ph-color-a: #2e7d5e; --ph-color-b: #1a4a38; }
+			#proj-model    { --ph-color-a: #7b3f6e; --ph-color-b: #3d1f37; }
+			#proj-auto     { --ph-color-a: #8a5a1a; --ph-color-b: #52320d; }
+		</style>
 	</head>
 	<body class="is-preload">
 
@@ -19,6 +85,7 @@
 				<li><a href="#top">Top</a></li>
 				<li><a href="#work">Expertise</a></li>
 				<li><a href="#portfolio">Projects</a></li>
+				<li><a href="#cad">CAD</a></li>
 				<li><a href="#publications">Publications</a></li>
 				<li><a href="#contact">Contact</a></li>
 			</ul>
@@ -111,9 +178,20 @@
 				</header>
 
 				<div class="row">
+
+					<!-- Project 1: Biodegradable Heart Stent -->
 					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+						<article class="box style2" id="proj-stent">
+							<!--
+								REPLACE LATER:
+								Swap the <div class="img-placeholder"> block with a real <img> tag, e.g.:
+								<img src="images/stent.jpg" alt="Biodegradable Heart Stent FEA" />
+							-->
+							<div class="image-wrapper">
+								<div class="img-placeholder">
+									<span>🫀</span>
+								</div>
+							</div>
 							<h3>Biodegradable Heart Stent</h3>
 							<p>
 								3D CAD and nonlinear FEA of a polymeric heart stent evaluated under
@@ -124,9 +202,18 @@
 						</article>
 					</div>
 
+					<!-- Project 2: Swelling-Driven Deformation -->
 					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+						<article class="box style2" id="proj-swelling">
+							<!--
+								REPLACE LATER:
+								<img src="images/swelling.jpg" alt="Swelling Deformation FEniCS" />
+							-->
+							<div class="image-wrapper">
+								<div class="img-placeholder">
+									<span>🔬</span>
+								</div>
+							</div>
 							<h3>Swelling-Driven Deformation Modeling</h3>
 							<p>
 								Coupled transport–mechanics framework implemented in FEniCS
@@ -136,9 +223,18 @@
 						</article>
 					</div>
 
+					<!-- Project 3: Nonlinear Constitutive Modeling -->
 					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+						<article class="box style2" id="proj-model">
+							<!--
+								REPLACE LATER:
+								<img src="images/constitutive.jpg" alt="Nonlinear Constitutive Model" />
+							-->
+							<div class="image-wrapper">
+								<div class="img-placeholder">
+									<span>📐</span>
+								</div>
+							</div>
 							<h3>Nonlinear Constitutive Modeling</h3>
 							<p>
 								Development and calibration of nonlinear constitutive models
@@ -148,9 +244,18 @@
 						</article>
 					</div>
 
+					<!-- Project 4: Simulation Automation -->
 					<div class="col-4 col-6-medium col-12-small">
-						<article class="box style2">
-							<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+						<article class="box style2" id="proj-auto">
+							<!--
+								REPLACE LATER:
+								<img src="images/automation.jpg" alt="Python Simulation Automation" />
+							-->
+							<div class="image-wrapper">
+								<div class="img-placeholder">
+									<span>⚙️</span>
+								</div>
+							</div>
 							<h3>Simulation Automation</h3>
 							<p>
 								Python-based automation for preprocessing, batch post-processing,
@@ -159,10 +264,143 @@
 							</p>
 						</article>
 					</div>
-				</div>
 
+				</div>
 			</div>
 		</article>
+
+		<!-- CAD Modeling -->
+		<article id="cad" class="wrapper style1">
+			<div class="container">
+				<header>
+					<h2>CAD Modeling</h2>
+					<p>Parametric geometry and topology-driven designs for simulation, manufacturing, and advanced material research.</p>
+				</header>
+
+				<div class="row aln-center">
+
+					<div class="col-4 col-6-medium col-12-small">
+						<div class="cad-card">
+							<div class="cad-img-wrap">
+								<img src="images/Gyroid_Unit.PNG" alt="Gyroid Unit Cell CAD" />
+							</div>
+							<div class="cad-body">
+								<h3>Gyroid Lattice Unit Cell</h3>
+								<p>
+									Triply periodic minimal surface (TPMS) geometry parameterized for
+									additive manufacturing. Enables tunable stiffness, controlled porosity,
+									and optimized mass-to-strength ratios in lightweight structural components.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-4 col-6-medium col-12-small">
+						<div class="cad-card">
+							<div class="cad-img-wrap">
+								<img src="images/Truss.PNG" alt="Truss Structure CAD" />
+							</div>
+							<div class="cad-body">
+								<h3>Truss Lattice Architecture</h3>
+								<p>
+									Periodic truss topology modeled for structural load-path analysis
+									and FEA-driven optimization. Applicable to lightweight aerospace frames,
+									medical implants, and high-stiffness metamaterial cores.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-4 col-6-medium col-12-small">
+						<div class="cad-card">
+							<div class="cad-img-wrap">
+								<img src="images/Twisted_Sphere.PNG" alt="Twisted Sphere CAD Geometry" />
+							</div>
+							<div class="cad-body">
+								<h3>Twisted Sphere Geometry</h3>
+								<p>
+									Complex freeform surface demonstrating advanced CAD capability for
+									non-standard geometries. Designed to study curvature-dependent stress
+									concentrations and boundary condition sensitivity in shell structures.
+								</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-4 col-6-medium col-12-small">
+						<div class="cad-card">
+							<div class="cad-img-wrap">
+								<img src="images/TAMU.PNG" alt="Texas A&M University Logo in SolidWorks" />
+							</div>
+							<div class="cad-body">
+								<h3>Texas A&M Logo — SolidWorks</h3>
+								<p>
+									Precision recreation of the Texas A&M University logo modeled
+									in SolidWorks.
+								</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</article>
+
+		<style>
+			/* ── CAD Gallery ── */
+			.cad-card {
+				background: #fff;
+				border-radius: 8px;
+				overflow: hidden;
+				box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+				transition: transform 0.3s ease, box-shadow 0.3s ease;
+				height: 100%;
+				display: flex;
+				flex-direction: column;
+			}
+
+			.cad-card:hover {
+				transform: translateY(-6px);
+				box-shadow: 0 12px 32px rgba(0,0,0,0.16);
+			}
+
+			.cad-img-wrap {
+				width: 100%;
+				height: 220px;
+				overflow: hidden;
+				background: #0d1f2d;
+			}
+
+			.cad-img-wrap img {
+				width: 100%;
+				height: 100%;
+				object-fit: contain;          /* show full model, no cropping */
+				object-position: center;
+				padding: 12px;
+				transition: transform 0.4s ease;
+			}
+
+			.cad-card:hover .cad-img-wrap img {
+				transform: scale(1.04);
+			}
+
+			.cad-body {
+				padding: 1.2em 1.4em 1.6em;
+				flex: 1;
+			}
+
+			.cad-body h3 {
+				margin: 0 0 0.5em;
+				font-size: 1.05em;
+			}
+
+			.cad-body p {
+				font-size: 0.9em;
+				line-height: 1.6;
+				color: #555;
+				margin: 0;
+			}
+		</style>
 
 		<!-- Publications -->
 		<article id="publications" class="wrapper style2">
@@ -176,7 +414,7 @@
 					<ul style="text-align:left;">
 						<li>
 							<strong>Nithin Veerendranath Kammara</strong>, Anastasia Muliana,
-							“Microstructural characteristics and its role in load transfer within staggered architectures of brittle and compliant constituents,”
+							"Microstructural characteristics and its role in load transfer within staggered architectures of brittle and compliant constituents,"
 							<em>International Journal of Engineering Science</em>,
 							doi: <a href="https://doi.org/10.1016/j.ijengsci.2026.104476" target="_blank">
 							https://doi.org/10.1016/j.ijengsci.2026.104476
@@ -184,12 +422,12 @@
 						</li>
 						<li>
 							<strong>Nithin Veerendranath Kammara</strong>, Anastasia Muliana,
-							“Mechanical Behavior of 3D Printed Multi-Material Composites”,
-							<em>Proceedings of the American Society of Composites 40th Techanical Conference.
+							"Mechanical Behavior of 3D Printed Multi-Material Composites",
+							<em>Proceedings of the American Society of Composites 40th Technical Conference.</em>
 						</li>
 						<li>
-							Arunkumar S.,<strong>Nithin Veerendranath Kammara</strong>,
-							“Effect of a circular hole on the SIF of a plate with a center crack subjected to uniaxial loading”,
+							Arunkumar S., <strong>Nithin Veerendranath Kammara</strong>,
+							"Effect of a circular hole on the SIF of a plate with a center crack subjected to uniaxial loading",
 							<em>Strength, Fracture and Complexity</em>,
 							doi: <a href="https://doi.org/10.3233/SFC-220294" target="_blank">
 							https://doi.org/10.3233/SFC-220294
@@ -197,20 +435,21 @@
 						</li>
 						<li>
 							<strong>Nithin Veerendranath Kammara</strong>, Anastasia Muliana,
-							“The Interplay of Materials and Topologies on the Degradation of Biodegradable Polymer Stent”,
-							<em>Society of Engineering Science Annual Technical Meeting.
+							"The Interplay of Materials and Topologies on the Degradation of Biodegradable Polymer Stent",
+							<em>Society of Engineering Science Annual Technical Meeting.</em>
 						</li>
 						<li>
 							<strong>Nithin Veerendranath Kammara</strong>, Anastasia Muliana,
-							“Modeling Spatial and Temporal Changes in the Chemical, Mechanical, and Geometrical Properties of Biodegradable Polymer Structures”,
-							<em>Society of Engineering Science Annual Technical Meeting.
+							"Modeling Spatial and Temporal Changes in the Chemical, Mechanical, and Geometrical Properties of Biodegradable Polymer Structures",
+							<em>Society of Engineering Science Annual Technical Meeting.</em>
 						</li>
 						<li>
-							Arunkumar S.,<strong>Nithin Veerendranath Kammara</strong>,
-							“Estimation of stress intensity factor of multiple inclined centre cracks under biaxial loading”,
+							Arunkumar S., <strong>Nithin Veerendranath Kammara</strong>,
+							"Estimation of stress intensity factor of multiple inclined centre cracks under biaxial loading",
 							<em>Journal of Failure Analysis and Prevention</em>,
 							doi: <a href="https://doi.org/10.1007/s11668-020-01019-0" target="_blank">
 							https://doi.org/10.1007/s11668-020-01019-0
+							</a>
 						</li>
 					</ul>
 				</section>
@@ -250,4 +489,3 @@
 
 	</body>
 </html>
-

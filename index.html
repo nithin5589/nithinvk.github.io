@@ -161,7 +161,7 @@ nav {
 .skill-tag { font-family:var(--mono); font-size:.68rem; letter-spacing:.06em; padding:.28rem .75rem; background:var(--cream2); border:1px solid var(--line); color:var(--ink2); border-radius:1px; transition:all .2s; }
 .skill-tag:hover { background:var(--amber-lt); border-color:rgba(192,98,47,.25); color:var(--amber); }
 
-/* ── EXPERIENCE ── */
+/* ── EXPERIENCE TIMELINE ── */
 .exp-timeline { display:flex; flex-direction:column; gap:0; }
 .exp-entry {
   display:grid; grid-template-columns:200px 1fr;
@@ -171,11 +171,9 @@ nav {
 }
 .exp-entry:first-child { border-top:1px solid var(--line); }
 .exp-entry:hover { background:var(--cream); margin:0 -4rem; padding-left:4rem; padding-right:4rem; }
-.exp-left {}
 .exp-company { font-family:var(--serif); font-size:.95rem; font-weight:700; color:var(--ink); line-height:1.3; margin-bottom:.3rem; }
 .exp-location { font-family:var(--mono); font-size:.64rem; letter-spacing:.08em; color:var(--muted); }
 .exp-dates { font-family:var(--mono); font-size:.65rem; letter-spacing:.08em; color:var(--amber); margin-top:.5rem; }
-.exp-right {}
 .exp-role { font-family:var(--sans); font-size:.95rem; font-weight:600; color:var(--ink2); margin-bottom:.4rem; }
 .exp-project { font-family:var(--serif); font-style:italic; font-size:.88rem; color:var(--slate); margin-bottom:.9rem; }
 .exp-bullets { list-style:none; display:flex; flex-direction:column; gap:.55rem; }
@@ -203,7 +201,7 @@ nav {
 .proj-meta { text-align:right; padding-top:.2rem; font-family:var(--mono); font-size:.65rem; letter-spacing:.08em; color:var(--muted); white-space:nowrap; }
 .proj-pill { display:inline-block; padding:.25rem .75rem; border:1px solid var(--line); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:var(--slate); border-radius:20px; margin-bottom:.5rem; }
 
-/* ── CAD ── */
+/* ── CAD GALLERY ── */
 .cad-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
 .cad-card { background:var(--parchment); border:1px solid var(--line-med); overflow:hidden; border-radius:2px; transition:box-shadow .3s, transform .3s; }
 .cad-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(28,35,48,.12); }
@@ -213,6 +211,105 @@ nav {
 .cad-body { padding:1.3rem; border-top:1px solid var(--line); }
 .cad-body h3 { font-family:var(--serif); font-size:.93rem; font-weight:700; color:var(--ink); margin-bottom:.4rem; }
 .cad-body p { font-size:.78rem; color:var(--muted); line-height:1.75; }
+
+/* ── FEA GALLERY ── */
+.fea-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+  gap:1.5rem;
+}
+
+.fea-card {
+  background:var(--parchment);
+  border:1px solid var(--line-med);
+  overflow:hidden;
+  border-radius:2px;
+  display:flex;
+  flex-direction:column;
+  transition:box-shadow .3s, transform .3s;
+}
+.fea-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(28,35,48,.14); }
+
+/* Video wrapper */
+.fea-video-wrap {
+  position:relative;
+  height:360px;
+  background:#0a1520;
+  overflow:hidden;
+  flex-shrink:0;
+}
+.fea-video-wrap video {
+  width:100%; height:100%;
+  object-fit:contain;
+  transition:transform .4s ease;
+}
+.fea-card:hover .fea-video-wrap video { transform:scale(1.03); }
+.fea-play-badge {
+  position:absolute;
+  top:.75rem; right:.75rem;
+  background:rgba(192,98,47,.88);
+  color:#fff;
+  font-family:var(--mono);
+  font-size:.58rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  padding:.25rem .65rem;
+  border-radius:1px;
+  pointer-events:none;
+}
+
+/* Placeholder wrapper */
+.fea-placeholder-wrap {
+  height:220px;
+  background:var(--cream2);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:.8rem;
+  border-bottom:1px solid var(--line);
+  flex-shrink:0;
+}
+.fea-ph-icon { font-size:2rem; opacity:.35; }
+.fea-ph-label {
+  font-family:var(--mono);
+  font-size:.6rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+}
+
+/* Card body */
+.fea-body {
+  padding:1.3rem 1.4rem 1.5rem;
+  flex:1;
+  border-top:1px solid var(--line);
+}
+.fea-body h3 {
+  font-family:var(--serif);
+  font-size:.93rem;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:.35rem;
+  line-height:1.4;
+}
+.fea-body p {
+  font-size:.78rem;
+  color:var(--muted);
+  line-height:1.75;
+  margin-bottom:.85rem;
+}
+.fea-tags { display:flex; flex-wrap:wrap; gap:.4rem; }
+.fea-tag {
+  font-family:var(--mono);
+  font-size:.6rem;
+  letter-spacing:.08em;
+  padding:.18rem .58rem;
+  background:var(--amber-lt);
+  border:1px solid rgba(192,98,47,.2);
+  color:var(--amber);
+  border-radius:1px;
+}
 
 /* ── PUBLICATIONS ── */
 .pub-list { display:flex; flex-direction:column; gap:1.1rem; }
@@ -283,6 +380,7 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
   .contact-inner { grid-template-columns:1fr; gap:3rem; }
   .otw-banner { padding:.65rem 1.8rem; font-size:.75rem; text-align:center; }
   footer { padding:1.2rem 1.8rem; flex-direction:column; text-align:center; gap:.5rem; }
+  .fea-grid { grid-template-columns:1fr; }
 }
 @media(max-width:600px){
   .exp-grid { grid-template-columns:1fr; }
@@ -307,6 +405,8 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#cad">CAD</a></li>
+    <li><a href="#fea">FEA</a></li>
     <li><a href="#publications">Research</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
@@ -426,236 +526,10 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
   </div>
 </section>
 
-<!-- SKILLS MATRIX -->
-<section class="section" id="skills">
-  <div class="section-header reveal">
-    <div class="section-num">02 — Technical Skills</div>
-    <h2 class="section-title">Full Skill Set</h2>
-    <div class="h-rule"></div>
-    <p class="section-subtitle">Comprehensive toolchain across simulation, design, programming, and characterization.</p>
-  </div>
-  <div class="skills-grid">
-    <div class="skill-group reveal d1">
-      <div class="skill-group-title">FEM / CAE Analysis</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Abaqus CAE</span>
-        <span class="skill-tag">UMAT / UHYPER</span>
-        <span class="skill-tag">DLOAD Subroutines</span>
-        <span class="skill-tag">ANSYS Mechanical</span>
-        <span class="skill-tag">COMSOL Multiphysics</span>
-        <span class="skill-tag">HyperMesh</span>
-        <span class="skill-tag">Star CCM+</span>
-        <span class="skill-tag">Abaqus AM Modeler</span>
-      </div>
-    </div>
-    <div class="skill-group reveal d2">
-      <div class="skill-group-title">CAD Modeling</div>
-      <div class="skill-tags">
-        <span class="skill-tag">SolidWorks</span>
-        <span class="skill-tag">Siemens NX</span>
-        <span class="skill-tag">CATIA V5</span>
-        <span class="skill-tag">PTC Creo Parametric</span>
-        <span class="skill-tag">Altair HyperMesh</span>
-        <span class="skill-tag">Parametric Design</span>
-        <span class="skill-tag">GD&amp;T</span>
-      </div>
-    </div>
-    <div class="skill-group reveal d3">
-      <div class="skill-group-title">Programming &amp; Computing</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Python</span>
-        <span class="skill-tag">MATLAB</span>
-        <span class="skill-tag">FORTRAN</span>
-        <span class="skill-tag">FEniCS</span>
-        <span class="skill-tag">Linux</span>
-        <span class="skill-tag">R Studio</span>
-        <span class="skill-tag">Automation Scripting</span>
-        <span class="skill-tag">Surrogate Modeling</span>
-      </div>
-    </div>
-    <div class="skill-group reveal d1">
-      <div class="skill-group-title">Material Characterization</div>
-      <div class="skill-tags">
-        <span class="skill-tag">UTM Instron / MTS</span>
-        <span class="skill-tag">DSC</span>
-        <span class="skill-tag">SEM</span>
-        <span class="skill-tag">X-ray CT</span>
-        <span class="skill-tag">Spectroscopy</span>
-        <span class="skill-tag">DMA</span>
-        <span class="skill-tag">Viscoelastic Testing</span>
-        <span class="skill-tag">ASTM Standards</span>
-      </div>
-    </div>
-    <div class="skill-group reveal d2">
-      <div class="skill-group-title">Simulation Focus Areas</div>
-      <div class="skill-tags">
-        <span class="skill-tag">Nonlinear Stress/Deformation</span>
-        <span class="skill-tag">Thermo-Mechanical</span>
-        <span class="skill-tag">Failure Analysis</span>
-        <span class="skill-tag">Chip Package Analysis</span>
-        <span class="skill-tag">Polymer Degradation</span>
-        <span class="skill-tag">Additive Manufacturing Sim</span>
-        <span class="skill-tag">Coupled Transport</span>
-      </div>
-    </div>
-    <div class="skill-group reveal d3">
-      <div class="skill-group-title">Manufacturing &amp; Production</div>
-      <div class="skill-tags">
-        <span class="skill-tag">CNC Machining</span>
-        <span class="skill-tag">FDM 3D Printing</span>
-        <span class="skill-tag">SLA 3D Printing</span>
-        <span class="skill-tag">DFM</span>
-        <span class="skill-tag">BOM Management</span>
-        <span class="skill-tag">SAP</span>
-        <span class="skill-tag">CMM Inspection</span>
-        <span class="skill-tag">2D Engineering Drawings</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- EXPERIENCE -->
-<section class="section section-alt" id="experience">
-  <div class="section-header reveal">
-    <div class="section-num">03 — Work Experience</div>
-    <h2 class="section-title">Professional History</h2>
-    <div class="h-rule"></div>
-  </div>
-  <div class="exp-timeline">
-
-    <div class="exp-entry reveal">
-      <div class="exp-left">
-        <div class="exp-company">Texas A&amp;M University</div>
-        <div class="exp-location">College Station, TX</div>
-        <div class="exp-dates">Dec 2021 — Present</div>
-      </div>
-      <div class="exp-right">
-        <div class="exp-role">Graduate Research Assistant</div>
-
-        <div class="exp-project">Multiphysics Design &amp; Degradation Analysis of Biodegradable Heart Stent</div>
-        <ul class="exp-bullets">
-          <li>Owned end-to-end design and validation of <strong>PLGA load-bearing structures</strong> using SolidWorks and nonlinear FEA, applying load estimation, structural hand calculations, and continuum mechanics for large-deformation analysis</li>
-          <li>Developed and calibrated <strong>hyperelastic Yeoh material models</strong> in Python/MATLAB, correlating simulations with tensile, creep, and relaxation testing to capture time-dependent stiffness evolution</li>
-          <li>Designed test fixtures and executed controlled <strong>degradation experiments</strong>, using FEA correlation and data-driven iteration to assess structural reliability and performance over a 3-month physiological cycle</li>
-        </ul>
-
-        <div class="exp-sub-project">
-          <div class="exp-project">Additive Manufacturing of Multi-Material Load-Bearing Structures</div>
-          <ul class="exp-bullets">
-            <li>Designed and fabricated <strong>TPU/PA6CF composite structures</strong> with tailored stiffness and controlled failure behavior for load-bearing applications using FDM 3D printing</li>
-            <li>Conducted <strong>ASTM-based mechanical testing</strong> (tensile, bending, compression, creep, relaxation) on Instron/MTS systems, applying classic mechanics to guide structural sizing and validate performance</li>
-            <li>Calibrated hyperelastic and viscoelastic material models achieving <strong>96% correlation up to 1000% strain</strong>, evaluating manufacturing–structure–property relationships using FEA and MATLAB</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="exp-entry reveal d1">
-      <div class="exp-left">
-        <div class="exp-company">Bharat Dynamics Limited</div>
-        <div class="exp-location">India</div>
-        <div class="exp-dates">June 2020 — July 2021</div>
-      </div>
-      <div class="exp-right">
-        <div class="exp-role">Mechanical Engineer</div>
-        <ul class="exp-bullets">
-          <li>Programmed and operated <strong>CNC lathe and milling machines (Tajmac)</strong> to manufacture high-precision aerospace components, supporting <strong>100+ units/day</strong> under tight tolerance and quality requirements</li>
-          <li>Applied <strong>GD&amp;T and DFM principles</strong> to optimize machining strategies, reducing rework by <strong>30%</strong> while improving production efficiency, part consistency, and structural assembly design</li>
-          <li>Created and released detailed <strong>2D engineering drawings</strong> and shop-floor documentation; collaborated with manufacturing/quality teams using SAP and CMM inspection for QC and compliance</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section class="section" id="projects">
-  <div class="section-header reveal">
-    <div class="section-num">04 — Selected Projects</div>
-    <h2 class="section-title">Research &amp; Engineering Work</h2>
-    <div class="h-rule"></div>
-    <p class="section-subtitle">Simulation- and design-driven projects with measurable engineering outcomes.</p>
-  </div>
-  <div class="proj-list">
-
-    <div class="proj-row reveal d1">
-      <div class="proj-index">01 /</div>
-      <div class="proj-content">
-        <h3>Biodegradable Heart Stent — Multiphysics FEA &amp; CAD</h3>
-        <div class="proj-tools-line">SolidWorks · Abaqus CAE · Python · MATLAB</div>
-        <ul class="proj-bullets">
-          <li>End-to-end design and nonlinear FEA validation of a PLGA stent under a 3-month physiological loading cycle</li>
-          <li>Hyperelastic/degradation material model calibrated against experimental data; guided geometry and material selection</li>
-        </ul>
-        <div class="proj-tags"><span class="proj-tag">Nonlinear FEA</span><span class="proj-tag">Polymer Mechanics</span><span class="proj-tag">Biomedical</span><span class="proj-tag">PLGA</span></div>
-      </div>
-      <div class="proj-meta"><span class="proj-pill">Research</span><br/>FEA · CAD</div>
-    </div>
-
-    <div class="proj-row reveal d2">
-      <div class="proj-index">02 /</div>
-      <div class="proj-content">
-        <h3>125cc Go-Kart Chassis — Structural Design &amp; Weight Optimization</h3>
-        <div class="proj-tools-line">SolidWorks · ANSYS · CNC Machining</div>
-        <ul class="proj-bullets">
-          <li>Designed and validated a welded tubular steel chassis using ANSYS FEA; achieved <strong>15% weight reduction</strong> with FoS &gt;2.5</li>
-          <li>Led a 20-member team through full product lifecycle — BOM, multi-part CAD, welding, CNC lathe and milling — to successful qualification at the <strong>National GKDC competition</strong></li>
-        </ul>
-        <div class="proj-tags"><span class="proj-tag">Structural FEA</span><span class="proj-tag">SolidWorks</span><span class="proj-tag">ANSYS</span><span class="proj-tag">CNC</span><span class="proj-tag">Team Lead</span></div>
-      </div>
-      <div class="proj-meta"><span class="proj-pill">Design</span><br/>Structures</div>
-    </div>
-
-    <div class="proj-row reveal d3">
-      <div class="proj-index">03 /</div>
-      <div class="proj-content">
-        <h3>Thermal Design &amp; Parametric Optimization of Chip-Heatsink Assembly</h3>
-        <div class="proj-tools-line">Abaqus CAE · Python Automation</div>
-        <ul class="proj-bullets">
-          <li>Developed 3D steady-state thermal FEA models to evaluate heat dissipation under realistic power and convection loading</li>
-          <li>Parametric optimization of fin geometry reduced peak temperature by <strong>24%</strong> using automated Python workflows</li>
-        </ul>
-        <div class="proj-tags"><span class="proj-tag">Thermal FEA</span><span class="proj-tag">Parametric Optimization</span><span class="proj-tag">Electronics Cooling</span><span class="proj-tag">Python</span></div>
-      </div>
-      <div class="proj-meta"><span class="proj-pill">Simulation</span><br/>Thermal</div>
-    </div>
-
-    <div class="proj-row reveal d4">
-      <div class="proj-index">04 /</div>
-      <div class="proj-content">
-        <h3>Thermo-Mechanical Simulation of FDM 3D Printing Process</h3>
-        <div class="proj-tools-line">Abaqus CAE · AM Modeler · Python Scripting</div>
-        <ul class="proj-bullets">
-          <li>Coupled thermo-mechanical FDM simulation using the Abaqus AM modeler to predict residual stresses, warpage, and thermal distortions during layer-by-layer deposition</li>
-          <li>Parametric optimization of extrusion temperature, layer thickness, and print speed to capture realistic warping and dimensional accuracy in polymer/elastomer AM</li>
-        </ul>
-        <div class="proj-tags"><span class="proj-tag">Abaqus AM</span><span class="proj-tag">Thermo-Mechanical</span><span class="proj-tag">Residual Stress</span><span class="proj-tag">Additive Manufacturing</span></div>
-      </div>
-      <div class="proj-meta"><span class="proj-pill">Simulation</span><br/>AM Process</div>
-    </div>
-
-    <div class="proj-row reveal d1">
-      <div class="proj-index">05 /</div>
-      <div class="proj-content">
-        <h3>Swelling-Driven Deformation Modeling</h3>
-        <div class="proj-tools-line">FEniCS · Python</div>
-        <ul class="proj-bullets">
-          <li>Coupled transport–mechanics framework to predict time-dependent deformation, stress evolution, and tolerance changes in polymers exposed to moisture and chemical environments</li>
-          <li>Relevant to sealing systems, medical devices, and structural adhesives in industry applications</li>
-        </ul>
-        <div class="proj-tags"><span class="proj-tag">FEniCS</span><span class="proj-tag">Coupled Transport</span><span class="proj-tag">Swelling</span><span class="proj-tag">Multiphysics</span></div>
-      </div>
-      <div class="proj-meta"><span class="proj-pill">Research</span><br/>Multiphysics</div>
-    </div>
-
-  </div>
-</section>
-
-<!-- CAD -->
+<!-- CAD GALLERY -->
 <section class="section section-alt" id="cad">
   <div class="section-header reveal">
-    <div class="section-num">05 — CAD Gallery</div>
+    <div class="section-num">02 — CAD Gallery</div>
     <h2 class="section-title">Parametric Modeling</h2>
     <div class="h-rule"></div>
     <p class="section-subtitle">Topology-driven geometries for simulation, manufacturing, and advanced material research.</p>
@@ -680,10 +554,268 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
-<section class="section" id="publications">
+<!-- FEA GALLERY -->
+<section class="section" id="fea">
   <div class="section-header reveal">
-    <div class="section-num">06 — Research Output</div>
+    <div class="section-num">03 — FEA Gallery</div>
+    <h2 class="section-title">Simulation Showcase</h2>
+    <div class="h-rule"></div>
+    <p class="section-subtitle">Finite element simulations capturing nonlinear material response, large deformation, and failure — validated against experimental data.</p>
+  </div>
+  <div class="fea-grid">
+
+    <!-- VIDEO CARD: Onyx Tensile Test -->
+    <div class="fea-card reveal d1">
+      <div class="fea-video-wrap">
+        <!--
+          ─── HOW TO CONVERT YOUR AVI ───────────────────────────────────────────
+          Run this in your project root (requires ffmpeg):
+
+            ffmpeg -i video/YOUR_FILENAME.avi \
+              -vcodec libx264 -crf 22 -preset slow \
+              -pix_fmt yuv420p -movflags +faststart \
+              video/tension_test.mp4
+
+          Then the <source> below will work automatically.
+          ───────────────────────────────────────────────────────────────────────
+        -->
+        <video autoplay loop muted playsinline>
+          <source src="video/tension_test.mp4" type="video/mp4" />
+        </video>
+        <div class="fea-play-badge">▶ Live Sim</div>
+      </div>
+      <div class="fea-body">
+        <h3>Uniaxial Tensile Test — Onyx (Elastic-Plastic FEA)</h3>
+        <p>Abaqus CAE simulation of an ASTM D638 Type IV dogbone specimen fabricated from Onyx (chopped carbon-fiber nylon). An elastic-plastic constitutive model captures the nonlinear stress–strain response and progressive yielding under uniaxial tension, directly correlated with Instron machine data.</p>
+        <div class="fea-tags">
+          <span class="fea-tag">Abaqus CAE</span>
+          <span class="fea-tag">Elastic-Plastic</span>
+          <span class="fea-tag">ASTM D638</span>
+          <span class="fea-tag">Onyx / CF-Nylon</span>
+          <span class="fea-tag">Uniaxial Tension</span>
+          <span class="fea-tag">Material Calibration</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLACEHOLDER 2 -->
+    <div class="fea-card reveal d2">
+      <div class="fea-placeholder-wrap">
+        <div class="fea-ph-icon">🧮</div>
+        <div class="fea-ph-label">Coming soon</div>
+      </div>
+      <div class="fea-body">
+        <h3>Hyperelastic Large-Deformation FEA</h3>
+        <p>Stress contour visualization from Abaqus CAE / ParaView showing Mises stress distribution under large-strain loading. Yeoh model calibrated against experimental tensile and relaxation data.</p>
+        <div class="fea-tags">
+          <span class="fea-tag">Abaqus CAE</span>
+          <span class="fea-tag">Hyperelastic</span>
+          <span class="fea-tag">Large Strain</span>
+          <span class="fea-tag">Yeoh Model</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- PLACEHOLDER 3 -->
+    <div class="fea-card reveal d3">
+      <div class="fea-placeholder-wrap">
+        <div class="fea-ph-icon">🌡️</div>
+        <div class="fea-ph-label">Coming soon</div>
+      </div>
+      <div class="fea-body">
+        <h3>Thermo-Mechanical FDM Simulation</h3>
+        <p>Coupled thermo-mechanical simulation of FDM printing using the Abaqus AM Modeler. Predicts residual stress, warpage, and dimensional distortion during layer-by-layer polymer deposition.</p>
+        <div class="fea-tags">
+          <span class="fea-tag">Abaqus AM</span>
+          <span class="fea-tag">Thermo-Mechanical</span>
+          <span class="fea-tag">Residual Stress</span>
+          <span class="fea-tag">FDM</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS MATRIX -->
+<section class="section" id="skills">
+  <div class="section-header reveal">
+    <div class="section-num">04 — Technical Skills</div>
+    <h2 class="section-title">Full Skill Set</h2>
+    <div class="h-rule"></div>
+    <p class="section-subtitle">Comprehensive toolchain across simulation, design, programming, and characterization.</p>
+  </div>
+  <div class="skills-grid">
+    <div class="skill-group reveal d1">
+      <div class="skill-group-title">FEM / CAE Analysis</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Abaqus CAE</span><span class="skill-tag">UMAT / UHYPER</span><span class="skill-tag">DLOAD Subroutines</span><span class="skill-tag">ANSYS Mechanical</span><span class="skill-tag">COMSOL Multiphysics</span><span class="skill-tag">HyperMesh</span><span class="skill-tag">Star CCM+</span><span class="skill-tag">Abaqus AM Modeler</span>
+      </div>
+    </div>
+    <div class="skill-group reveal d2">
+      <div class="skill-group-title">CAD Modeling</div>
+      <div class="skill-tags">
+        <span class="skill-tag">SolidWorks</span><span class="skill-tag">Siemens NX</span><span class="skill-tag">CATIA V5</span><span class="skill-tag">PTC Creo Parametric</span><span class="skill-tag">Altair HyperMesh</span><span class="skill-tag">Parametric Design</span><span class="skill-tag">GD&amp;T</span>
+      </div>
+    </div>
+    <div class="skill-group reveal d3">
+      <div class="skill-group-title">Programming &amp; Computing</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Python</span><span class="skill-tag">MATLAB</span><span class="skill-tag">FORTRAN</span><span class="skill-tag">FEniCS</span><span class="skill-tag">Linux</span><span class="skill-tag">R Studio</span><span class="skill-tag">Automation Scripting</span><span class="skill-tag">Surrogate Modeling</span>
+      </div>
+    </div>
+    <div class="skill-group reveal d1">
+      <div class="skill-group-title">Material Characterization</div>
+      <div class="skill-tags">
+        <span class="skill-tag">UTM Instron / MTS</span><span class="skill-tag">DSC</span><span class="skill-tag">SEM</span><span class="skill-tag">X-ray CT</span><span class="skill-tag">Spectroscopy</span><span class="skill-tag">DMA</span><span class="skill-tag">Viscoelastic Testing</span><span class="skill-tag">ASTM Standards</span>
+      </div>
+    </div>
+    <div class="skill-group reveal d2">
+      <div class="skill-group-title">Simulation Focus Areas</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Nonlinear Stress/Deformation</span><span class="skill-tag">Thermo-Mechanical</span><span class="skill-tag">Failure Analysis</span><span class="skill-tag">Chip Package Analysis</span><span class="skill-tag">Polymer Degradation</span><span class="skill-tag">Additive Manufacturing Sim</span><span class="skill-tag">Coupled Transport</span>
+      </div>
+    </div>
+    <div class="skill-group reveal d3">
+      <div class="skill-group-title">Manufacturing &amp; Production</div>
+      <div class="skill-tags">
+        <span class="skill-tag">CNC Machining</span><span class="skill-tag">FDM 3D Printing</span><span class="skill-tag">SLA 3D Printing</span><span class="skill-tag">DFM</span><span class="skill-tag">BOM Management</span><span class="skill-tag">SAP</span><span class="skill-tag">CMM Inspection</span><span class="skill-tag">2D Engineering Drawings</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section class="section section-alt" id="experience">
+  <div class="section-header reveal">
+    <div class="section-num">05 — Work Experience</div>
+    <h2 class="section-title">Professional History</h2>
+    <div class="h-rule"></div>
+  </div>
+  <div class="exp-timeline">
+    <div class="exp-entry reveal">
+      <div class="exp-left">
+        <div class="exp-company">Texas A&amp;M University</div>
+        <div class="exp-location">College Station, TX</div>
+        <div class="exp-dates">Dec 2021 — Present</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Graduate Research Assistant</div>
+        <div class="exp-project">Multiphysics Design &amp; Degradation Analysis of Biodegradable Heart Stent</div>
+        <ul class="exp-bullets">
+          <li>Owned end-to-end design and validation of <strong>PLGA load-bearing structures</strong> using SolidWorks and nonlinear FEA, applying load estimation, structural hand calculations, and continuum mechanics for large-deformation analysis</li>
+          <li>Developed and calibrated <strong>hyperelastic Yeoh material models</strong> in Python/MATLAB, correlating simulations with tensile, creep, and relaxation testing to capture time-dependent stiffness evolution</li>
+          <li>Designed test fixtures and executed controlled <strong>degradation experiments</strong>, using FEA correlation and data-driven iteration to assess structural reliability and performance over a 3-month physiological cycle</li>
+        </ul>
+        <div class="exp-sub-project">
+          <div class="exp-project">Additive Manufacturing of Multi-Material Load-Bearing Structures</div>
+          <ul class="exp-bullets">
+            <li>Designed and fabricated <strong>TPU/PA6CF composite structures</strong> with tailored stiffness and controlled failure behavior for load-bearing applications using FDM 3D printing</li>
+            <li>Conducted <strong>ASTM-based mechanical testing</strong> (tensile, bending, compression, creep, relaxation) on Instron/MTS systems, applying classic mechanics to guide structural sizing and validate performance</li>
+            <li>Calibrated hyperelastic and viscoelastic material models achieving <strong>96% correlation up to 1000% strain</strong>, evaluating manufacturing–structure–property relationships using FEA and MATLAB</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="exp-entry reveal d1">
+      <div class="exp-left">
+        <div class="exp-company">Bharat Dynamics Limited</div>
+        <div class="exp-location">India</div>
+        <div class="exp-dates">June 2020 — July 2021</div>
+      </div>
+      <div class="exp-right">
+        <div class="exp-role">Mechanical Engineer</div>
+        <ul class="exp-bullets">
+          <li>Programmed and operated <strong>CNC lathe and milling machines (Tajmac)</strong> to manufacture high-precision aerospace components, supporting <strong>100+ units/day</strong> under tight tolerance and quality requirements</li>
+          <li>Applied <strong>GD&amp;T and DFM principles</strong> to optimize machining strategies, reducing rework by <strong>30%</strong> while improving production efficiency, part consistency, and structural assembly design</li>
+          <li>Created and released detailed <strong>2D engineering drawings</strong> and shop-floor documentation; collaborated with manufacturing/quality teams using SAP and CMM inspection for QC and compliance</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section class="section" id="projects">
+  <div class="section-header reveal">
+    <div class="section-num">06 — Selected Projects</div>
+    <h2 class="section-title">Research &amp; Engineering Work</h2>
+    <div class="h-rule"></div>
+    <p class="section-subtitle">Simulation- and design-driven projects with measurable engineering outcomes.</p>
+  </div>
+  <div class="proj-list">
+    <div class="proj-row reveal d1">
+      <div class="proj-index">01 /</div>
+      <div class="proj-content">
+        <h3>Biodegradable Heart Stent — Multiphysics FEA &amp; CAD</h3>
+        <div class="proj-tools-line">SolidWorks · Abaqus CAE · Python · MATLAB</div>
+        <ul class="proj-bullets">
+          <li>End-to-end design and nonlinear FEA validation of a PLGA stent under a 3-month physiological loading cycle</li>
+          <li>Hyperelastic/degradation material model calibrated against experimental data; guided geometry and material selection</li>
+        </ul>
+        <div class="proj-tags"><span class="proj-tag">Nonlinear FEA</span><span class="proj-tag">Polymer Mechanics</span><span class="proj-tag">Biomedical</span><span class="proj-tag">PLGA</span></div>
+      </div>
+      <div class="proj-meta"><span class="proj-pill">Research</span><br/>FEA · CAD</div>
+    </div>
+    <div class="proj-row reveal d2">
+      <div class="proj-index">02 /</div>
+      <div class="proj-content">
+        <h3>125cc Go-Kart Chassis — Structural Design &amp; Weight Optimization</h3>
+        <div class="proj-tools-line">SolidWorks · ANSYS · CNC Machining</div>
+        <ul class="proj-bullets">
+          <li>Designed and validated a welded tubular steel chassis using ANSYS FEA; achieved <strong>15% weight reduction</strong> with FoS &gt;2.5</li>
+          <li>Led a 20-member team through full product lifecycle — BOM, multi-part CAD, welding, CNC lathe and milling — to successful qualification at the <strong>National GKDC competition</strong></li>
+        </ul>
+        <div class="proj-tags"><span class="proj-tag">Structural FEA</span><span class="proj-tag">SolidWorks</span><span class="proj-tag">ANSYS</span><span class="proj-tag">CNC</span><span class="proj-tag">Team Lead</span></div>
+      </div>
+      <div class="proj-meta"><span class="proj-pill">Design</span><br/>Structures</div>
+    </div>
+    <div class="proj-row reveal d3">
+      <div class="proj-index">03 /</div>
+      <div class="proj-content">
+        <h3>Thermal Design &amp; Parametric Optimization of Chip-Heatsink Assembly</h3>
+        <div class="proj-tools-line">Abaqus CAE · Python Automation</div>
+        <ul class="proj-bullets">
+          <li>Developed 3D steady-state thermal FEA models to evaluate heat dissipation under realistic power and convection loading</li>
+          <li>Parametric optimization of fin geometry reduced peak temperature by <strong>24%</strong> using automated Python workflows</li>
+        </ul>
+        <div class="proj-tags"><span class="proj-tag">Thermal FEA</span><span class="proj-tag">Parametric Optimization</span><span class="proj-tag">Electronics Cooling</span><span class="proj-tag">Python</span></div>
+      </div>
+      <div class="proj-meta"><span class="proj-pill">Simulation</span><br/>Thermal</div>
+    </div>
+    <div class="proj-row reveal d4">
+      <div class="proj-index">04 /</div>
+      <div class="proj-content">
+        <h3>Thermo-Mechanical Simulation of FDM 3D Printing Process</h3>
+        <div class="proj-tools-line">Abaqus CAE · AM Modeler · Python Scripting</div>
+        <ul class="proj-bullets">
+          <li>Coupled thermo-mechanical FDM simulation using the Abaqus AM modeler to predict residual stresses, warpage, and thermal distortions during layer-by-layer deposition</li>
+          <li>Parametric optimization of extrusion temperature, layer thickness, and print speed to capture realistic warping and dimensional accuracy in polymer/elastomer AM</li>
+        </ul>
+        <div class="proj-tags"><span class="proj-tag">Abaqus AM</span><span class="proj-tag">Thermo-Mechanical</span><span class="proj-tag">Residual Stress</span><span class="proj-tag">Additive Manufacturing</span></div>
+      </div>
+      <div class="proj-meta"><span class="proj-pill">Simulation</span><br/>AM Process</div>
+    </div>
+    <div class="proj-row reveal d1">
+      <div class="proj-index">05 /</div>
+      <div class="proj-content">
+        <h3>Swelling-Driven Deformation Modeling</h3>
+        <div class="proj-tools-line">FEniCS · Python</div>
+        <ul class="proj-bullets">
+          <li>Coupled transport–mechanics framework to predict time-dependent deformation, stress evolution, and tolerance changes in polymers exposed to moisture and chemical environments</li>
+          <li>Relevant to sealing systems, medical devices, and structural adhesives in industry applications</li>
+        </ul>
+        <div class="proj-tags"><span class="proj-tag">FEniCS</span><span class="proj-tag">Coupled Transport</span><span class="proj-tag">Swelling</span><span class="proj-tag">Multiphysics</span></div>
+      </div>
+      <div class="proj-meta"><span class="proj-pill">Research</span><br/>Multiphysics</div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section class="section section-alt" id="publications">
+  <div class="section-header reveal">
+    <div class="section-num">07 — Research Output</div>
     <h2 class="section-title">Publications &amp; Conferences</h2>
     <div class="h-rule"></div>
     <p class="section-subtitle">Peer-reviewed research in mechanics, composites, and simulation-driven engineering design.</p>
@@ -696,10 +828,10 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
       <div class="pub-venue"><em>International Journal of Engineering Science</em>, 221, 104476 · <a href="https://doi.org/10.1016/j.ijengsci.2026.104476" target="_blank">doi:10.1016/j.ijengsci.2026.104476</a></div>
     </div>
     <div class="pub-card reveal d2">
-      <div class="pub-type">Journal Article · Accepted</div>
+      <div class="pub-type">Journal Article · 2026</div>
       <div class="pub-title">Stencil generation and multi-field simulation pipeline of 3D complex geometries from stereolithography (STL) files</div>
-      <div class="pub-authors"><strong>Nithin V Kammara</strong>, Anastasia Muliana</div>
-      <div class="pub-venue"><em>Applications in Engineering Science</em> — Accepted</div>
+      <div class="pub-authors"><strong>Nithin V Kammara</strong>, et. al., Anastasia Muliana</div>
+      <div class="pub-venue"><em>Applications in Engineering Science</em> (2026): 100313</div>
     </div>
     <div class="pub-card reveal d3">
       <div class="pub-type">Conference Proceedings · 2025</div>
@@ -756,7 +888,7 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
 <!-- CONTACT -->
 <section class="section" id="contact">
   <div class="section-header reveal">
-    <div class="section-num">07 — Get In Touch</div>
+    <div class="section-num">08 — Get In Touch</div>
     <h2 class="section-title">Open to Opportunities</h2>
     <div class="h-rule"></div>
     <p class="section-subtitle">Actively seeking industry R&amp;D, simulation engineering, and CAE roles — available from 2026.</p>

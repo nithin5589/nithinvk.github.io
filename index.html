@@ -567,18 +567,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
     <!-- VIDEO CARD: Onyx Tensile Test -->
     <div class="fea-card reveal d1">
       <div class="fea-video-wrap">
-        <!--
-          ─── HOW TO CONVERT YOUR AVI ───────────────────────────────────────────
-          Run this in your project root (requires ffmpeg):
-
-            ffmpeg -i video/YOUR_FILENAME.avi \
-              -vcodec libx264 -crf 22 -preset slow \
-              -pix_fmt yuv420p -movflags +faststart \
-              video/tension_test.mp4
-
-          Then the <source> below will work automatically.
-          ───────────────────────────────────────────────────────────────────────
-        -->
         <video autoplay loop muted playsinline>
           <source src="video/tension_test.mp4" type="video/mp4" />
         </video>
@@ -618,18 +606,22 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
 
     <!-- PLACEHOLDER 3 -->
     <div class="fea-card reveal d3">
-      <div class="fea-placeholder-wrap">
-        <div class="fea-ph-icon">🌡️</div>
-        <div class="fea-ph-label">Coming soon</div>
+      <div class="fea-video-wrap">
+        <video autoplay loop muted playsinline>
+          <source src="video/fdm_simulation.mp4" type="video/mp4" />
+        </video>
+        <div class="fea-play-badge">▶ Live Sim</div>
       </div>
       <div class="fea-body">
-        <h3>Thermo-Mechanical FDM Simulation</h3>
-        <p>Coupled thermo-mechanical simulation of FDM printing using the Abaqus AM Modeler. Predicts residual stress, warpage, and dimensional distortion during layer-by-layer polymer deposition.</p>
+        <h3>FDM Process Simulation — PLA Hollow Cylinder</h3>
+        <p>Abaqus CAE thermo-mechanical simulation of FDM printing a hollow cylindrical geometry using PLA material properties. Captures layer-by-layer deposition, thermal gradients, residual stress buildup, and potential warpage during the additive manufacturing process.</p>
         <div class="fea-tags">
           <span class="fea-tag">Abaqus AM</span>
           <span class="fea-tag">Thermo-Mechanical</span>
-          <span class="fea-tag">Residual Stress</span>
+          <span class="fea-tag">PLA</span>
           <span class="fea-tag">FDM</span>
+          <span class="fea-tag">Residual Stress</span>
+          <span class="fea-tag">Hollow Cylinder</span>
         </div>
       </div>
     </div>

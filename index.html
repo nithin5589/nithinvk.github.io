@@ -6,7 +6,6 @@
 <title>Nithin Veerendranath K — Mechanical Engineer</title>
 <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Epilogue:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
 <style>
-
 :root {
   --cream:    #f5f2ec;
   --cream2:   #ede9e0;
@@ -28,10 +27,8 @@
   --sans:   'Epilogue', sans-serif;
   --mono:   'JetBrains Mono', monospace;
 }
-
 *, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
 html { scroll-behavior:smooth; font-size:18px; }
-
 body {
   background:var(--parchment);
   color:var(--ink);
@@ -40,14 +37,12 @@ body {
   line-height:1.7;
   overflow-x:hidden;
 }
-
 body::before {
   content:''; position:fixed; inset:0; z-index:0; pointer-events:none;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");
   opacity:.5;
 }
 .site { position:relative; z-index:1; }
-
 /* ── OPEN TO WORK BANNER ── */
 .otw-banner {
   background: var(--green);
@@ -76,7 +71,6 @@ body::before {
   transition:border-color .2s;
 }
 .otw-banner a:hover { border-color:#7effc0; }
-
 /* ── NAV ── */
 nav {
   position:sticky; top:0; width:100%; z-index:200;
@@ -92,7 +86,6 @@ nav {
 .nav-links { display:flex; gap:2.5rem; list-style:none; }
 .nav-links a { font-family:var(--sans); font-size:.75rem; font-weight:500; letter-spacing:.1em; text-transform:uppercase; color:var(--slate); text-decoration:none; transition:color .2s; }
 .nav-links a:hover { color:var(--amber); }
-
 /* ── HERO ── */
 #hero {
   min-height:calc(100vh - 40px);
@@ -113,7 +106,6 @@ nav {
 .btn-solid:hover { background:var(--amber); border-color:var(--amber); }
 .btn-outline { background:transparent; color:var(--ink); border:1px solid var(--line-med); }
 .btn-outline:hover { border-color:var(--amber); color:var(--amber); }
-
 .hero-panel { opacity:0; animation:riseIn .7s 1s ease forwards; display:flex; flex-direction:column; gap:1.4rem; }
 .stat-block { border-left:2px solid var(--amber); padding:.8rem 1.4rem; background:var(--cream); transition:box-shadow .25s, transform .25s; }
 .stat-block:hover { transform:translateX(4px); box-shadow:4px 0 0 var(--amber2); }
@@ -129,7 +121,6 @@ nav {
 }
 .hero-otw-badge .dot { width:8px; height:8px; border-radius:50%; background:var(--green); animation:pulse 1.8s ease-in-out infinite; flex-shrink:0; }
 .hero-otw-badge span { font-family:var(--mono); font-size:.68rem; letter-spacing:.1em; text-transform:uppercase; color:var(--green); font-weight:400; }
-
 /* ── SECTIONS ── */
 .section { padding:7rem 4rem; border-bottom:1px solid var(--line); }
 .section-alt { background:var(--cream); }
@@ -138,7 +129,6 @@ nav {
 .section-title { font-family:var(--serif); font-size:clamp(1.8rem,3vw,2.5rem); font-weight:700; color:var(--ink); letter-spacing:-.02em; margin-top:.5rem; line-height:1.2; }
 .section-subtitle { font-family:var(--sans); font-size:.88rem; color:var(--muted); margin-top:.7rem; max-width:560px; line-height:1.8; }
 .h-rule { width:40px; height:1.5px; background:var(--amber); margin:1rem 0 0; }
-
 /* ── EXPERTISE ── */
 .exp-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line-med); border:1px solid var(--line-med); }
 .exp-card { background:var(--parchment); padding:2.2rem 1.8rem; position:relative; overflow:hidden; transition:background .25s; }
@@ -152,7 +142,6 @@ nav {
 .exp-tools { display:flex; flex-wrap:wrap; gap:.45rem; margin-top:1.3rem; }
 .tool-chip { font-family:var(--mono); font-size:.62rem; letter-spacing:.08em; padding:.2rem .6rem; background:var(--cream2); border:1px solid var(--line); color:var(--ink2); border-radius:1px; transition:background .2s, color .2s, border-color .2s; }
 .exp-card:hover .tool-chip { background:var(--amber-lt); border-color:rgba(192,98,47,.2); color:var(--amber); }
-
 /* ── SKILLS MATRIX ── */
 .skills-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:1.5rem; }
 .skill-group { background:var(--parchment); border:1px solid var(--line-med); padding:1.8rem; }
@@ -160,7 +149,6 @@ nav {
 .skill-tags { display:flex; flex-wrap:wrap; gap:.5rem; }
 .skill-tag { font-family:var(--mono); font-size:.68rem; letter-spacing:.06em; padding:.28rem .75rem; background:var(--cream2); border:1px solid var(--line); color:var(--ink2); border-radius:1px; transition:all .2s; }
 .skill-tag:hover { background:var(--amber-lt); border-color:rgba(192,98,47,.25); color:var(--amber); }
-
 /* ── EXPERIENCE TIMELINE ── */
 .exp-timeline { display:flex; flex-direction:column; gap:0; }
 .exp-entry {
@@ -182,7 +170,6 @@ nav {
 .exp-bullets li strong { color:var(--ink2); font-weight:600; }
 .exp-sub-project { margin-top:1.4rem; padding-top:1.2rem; border-top:1px dashed var(--line-med); }
 .exp-sub-project .exp-project { margin-bottom:.7rem; }
-
 /* ── PROJECTS ── */
 .proj-list { display:flex; flex-direction:column; }
 .proj-row { display:grid; grid-template-columns:72px 1fr auto; align-items:start; gap:2rem; padding:2.2rem 0; border-bottom:1px solid var(--line); transition:background .2s, padding .2s; }
@@ -200,7 +187,6 @@ nav {
 .proj-tag { font-family:var(--mono); font-size:.62rem; letter-spacing:.08em; padding:.18rem .6rem; background:var(--amber-lt); border:1px solid rgba(192,98,47,.2); color:var(--amber); border-radius:1px; }
 .proj-meta { text-align:right; padding-top:.2rem; font-family:var(--mono); font-size:.65rem; letter-spacing:.08em; color:var(--muted); white-space:nowrap; }
 .proj-pill { display:inline-block; padding:.25rem .75rem; border:1px solid var(--line); font-size:.62rem; letter-spacing:.1em; text-transform:uppercase; color:var(--slate); border-radius:20px; margin-bottom:.5rem; }
-
 /* ── CAD GALLERY ── */
 .cad-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1.5rem; }
 .cad-card { background:var(--parchment); border:1px solid var(--line-med); overflow:hidden; border-radius:2px; transition:box-shadow .3s, transform .3s; }
@@ -211,14 +197,12 @@ nav {
 .cad-body { padding:1.3rem; border-top:1px solid var(--line); }
 .cad-body h3 { font-family:var(--serif); font-size:.93rem; font-weight:700; color:var(--ink); margin-bottom:.4rem; }
 .cad-body p { font-size:.78rem; color:var(--muted); line-height:1.75; }
-
 /* ── FEA GALLERY ── */
 .fea-grid {
   display:grid;
   grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
   gap:1.5rem;
 }
-
 .fea-card {
   background:var(--parchment);
   border:1px solid var(--line-med);
@@ -229,7 +213,6 @@ nav {
   transition:box-shadow .3s, transform .3s;
 }
 .fea-card:hover { transform:translateY(-4px); box-shadow:0 16px 40px rgba(28,35,48,.14); }
-
 /* Video wrapper */
 .fea-video-wrap {
   position:relative;
@@ -257,7 +240,6 @@ nav {
   border-radius:1px;
   pointer-events:none;
 }
-
 /* Placeholder wrapper */
 .fea-placeholder-wrap {
   height:220px;
@@ -278,7 +260,6 @@ nav {
   text-transform:uppercase;
   color:var(--muted);
 }
-
 /* Card body */
 .fea-body {
   padding:1.3rem 1.4rem 1.5rem;
@@ -310,7 +291,6 @@ nav {
   color:var(--amber);
   border-radius:1px;
 }
-
 /* ── PUBLICATIONS ── */
 .pub-list { display:flex; flex-direction:column; gap:1.1rem; }
 .pub-card { background:var(--parchment); border:1px solid var(--line); padding:1.6rem 2rem; position:relative; transition:border-color .25s, box-shadow .25s; }
@@ -324,7 +304,6 @@ nav {
 .pub-venue { font-size:.76rem; color:var(--slate); margin-top:.3rem; }
 .pub-venue a { color:var(--blue); text-decoration:none; }
 .pub-venue a:hover { text-decoration:underline; }
-
 /* ── AWARDS ── */
 .awards-list { display:flex; flex-direction:column; gap:.8rem; }
 .award-item { display:flex; align-items:baseline; gap:1rem; padding:1rem 1.4rem; background:var(--parchment); border:1px solid var(--line); border-left:3px solid var(--amber); transition:background .2s; }
@@ -332,7 +311,6 @@ nav {
 .award-icon { font-size:1rem; flex-shrink:0; }
 .award-text { font-family:var(--sans); font-size:.84rem; color:var(--slate); line-height:1.6; }
 .award-text strong { color:var(--ink2); display:block; font-weight:600; font-size:.86rem; }
-
 /* ── CONTACT ── */
 #contact { background:var(--ink); color:var(--cream); }
 #contact .section-num { color:var(--amber2); }
@@ -351,18 +329,14 @@ nav {
 .cl-icon svg { width:16px; height:16px; fill:var(--amber2); }
 .cl-text strong { display:block; font-family:var(--sans); font-size:.8rem; font-weight:600; color:var(--cream); letter-spacing:.04em; }
 .cl-text span { font-family:var(--mono); font-size:.66rem; color:rgba(245,242,236,.4); letter-spacing:.06em; }
-
 /* ── FOOTER ── */
 footer { background:var(--ink); border-top:1px solid rgba(245,242,236,.08); padding:1.5rem 4rem; display:flex; justify-content:space-between; align-items:center; }
 footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; color:rgba(245,242,236,.3); }
-
 /* ── REVEAL ── */
 .reveal { opacity:0; transform:translateY(24px); transition:opacity .65s ease, transform .65s ease; }
 .reveal.in { opacity:1; transform:none; }
 .d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s} .d4{transition-delay:.32s}
-
 @keyframes riseIn { from { opacity:0; transform:translateY(18px); } to { opacity:1; transform:none; } }
-
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
   nav { padding:.9rem 1.8rem; }
@@ -389,14 +363,12 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
 </head>
 <body>
 <div class="site">
-
 <!-- OPEN TO WORK BANNER -->
 <div class="otw-banner">
   <div class="otw-dot"></div>
   <span>Open to Work — Actively seeking industry R&amp;D, simulation engineering, and CAE roles.</span>
   <a href="#contact">Get in touch →</a>
 </div>
-
 <!-- NAV -->
 <nav id="nav">
   <div class="nav-brand">Nithin Veerendranath <em>K</em></div>
@@ -411,7 +383,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
-
 <!-- HERO -->
 <section id="hero">
   <div class="hero-text">
@@ -431,7 +402,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
       <a href="#contact" class="btn btn-outline">Contact</a>
     </div>
   </div>
-
   <div class="hero-panel">
     <div class="hero-otw-badge">
       <div class="dot"></div>
@@ -459,7 +429,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
     </div>
   </div>
 </section>
-
 <!-- EXPERTISE -->
 <section class="section section-alt" id="expertise">
   <div class="section-header reveal">
@@ -525,7 +494,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
     </div>
   </div>
 </section>
-
 <!-- CAD GALLERY -->
 <section class="section section-alt" id="cad">
   <div class="section-header reveal">
@@ -551,9 +519,29 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
       <div class="cad-img"><img src="images/TAMU.PNG" alt="Texas A&M SolidWorks" /></div>
       <div class="cad-body"><h3>Texas A&amp;M Logo — SolidWorks</h3><p>Precision recreation demonstrating clean sketch-driven feature modeling and constraint-based geometry control in SolidWorks.</p></div>
     </div>
+    <!-- CATIA V5 SHEET METAL DESIGNS -->
+    <div class="cad-card reveal d1">
+      <div class="cad-img"><img src="images/1.png" alt="Sheet Metal Bracket Design" /></div>
+      <div class="cad-body"><h3>Sheet Metal Bracket — CATIA V5</h3><p>Industrial mounting bracket designed with bend allowances, draft angles, and manufacturability considerations for stamping and injection molding tooling.</p></div>
+    </div>
+    <div class="cad-card reveal d2">
+      <div class="cad-img"><img src="images/2.png" alt="Cylindrical Can Design" /></div>
+      <div class="cad-body"><h3>Cylindrical Can Assembly — CATIA V5</h3><p>Tapered sheet metal can design with optimized wall thickness, flange geometry, and draft for deep-draw stamping or rotational molding processes.</p></div>
+    </div>
+    <div class="cad-card reveal d3">
+      <div class="cad-img"><img src="images/3.png" alt="HVAC Drain Pan" /></div>
+      <div class="cad-body"><h3>HVAC Drain Pan — CATIA V5</h3><p>Formed sheet metal drain pan featuring controlled taper for mold release, reinforced ribs for structural integrity, and corner radii optimized for cost-effective stamping.</p></div>
+    </div>
+    <div class="cad-card reveal d4">
+      <div class="cad-img"><img src="images/4.png" alt="Structural Channel Bracket" /></div>
+      <div class="cad-body"><h3>Structural Channel Bracket — CATIA V5</h3><p>Multi-bend bracket with slot features and mounting holes. Designed with GD&amp;T-compliant tolerances for progressive die stamping and automated assembly lines.</p></div>
+    </div>
+    <div class="cad-card reveal d1">
+      <div class="cad-img"><img src="images/5.png" alt="Tapered Enclosure Component" /></div>
+      <div class="cad-body"><h3>Tapered Enclosure Component — CATIA V5</h3><p>Lightweight sheet metal housing with tapered walls and edge flanges. Draft angles and bend radii optimized for both metal stamping and injection-molded plastic alternatives.</p></div>
+    </div>
   </div>
 </section>
-
 <!-- FEA GALLERY -->
 <section class="section" id="fea">
   <div class="section-header reveal">
@@ -563,7 +551,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
     <p class="section-subtitle">Finite element simulations capturing nonlinear material response, large deformation, and failure — validated against experimental data.</p>
   </div>
   <div class="fea-grid">
-
     <!-- VIDEO CARD: Onyx Tensile Test -->
     <div class="fea-card reveal d1">
       <div class="fea-video-wrap">
@@ -585,7 +572,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
         </div>
       </div>
     </div>
-
     <!-- PLACEHOLDER 2 -->
     <div class="fea-card reveal d2">
       <div class="fea-placeholder-wrap">
@@ -603,7 +589,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
         </div>
       </div>
     </div>
-
     <!-- PLACEHOLDER 3 -->
     <div class="fea-card reveal d3">
       <div class="fea-video-wrap">
@@ -625,10 +610,8 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
         </div>
       </div>
     </div>
-
   </div>
 </section>
-
 <!-- SKILLS MATRIX -->
 <section class="section" id="skills">
   <div class="section-header reveal">
@@ -676,7 +659,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
     </div>
   </div>
 </section>
-
 <!-- EXPERIENCE -->
 <section class="section section-alt" id="experience">
   <div class="section-header reveal">
@@ -726,7 +708,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
     </div>
   </div>
 </section>
-
 <!-- PROJECTS -->
 <section class="section" id="projects">
   <div class="section-header reveal">
@@ -803,7 +784,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
     </div>
   </div>
 </section>
-
 <!-- PUBLICATIONS -->
 <section class="section section-alt" id="publications">
   <div class="section-header reveal">
@@ -856,7 +836,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
       <div class="pub-venue"><em>Journal of Failure Analysis and Prevention</em>, 20(6), 2040–2058 · <a href="https://doi.org/10.1007/s11668-020-01019-0" target="_blank">doi:10.1007/s11668-020-01019-0</a></div>
     </div>
   </div>
-
   <!-- AWARDS -->
   <div style="margin-top:3rem;">
     <h3 style="font-family:var(--serif);font-size:1.3rem;font-weight:700;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-.01em;" class="reveal">Awards &amp; Recognition</h3>
@@ -876,7 +855,6 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
     </div>
   </div>
 </section>
-
 <!-- CONTACT -->
 <section class="section" id="contact">
   <div class="section-header reveal">
@@ -915,14 +893,11 @@ footer p { font-family:var(--mono); font-size:.66rem; letter-spacing:.08em; colo
     </div>
   </div>
 </section>
-
 <footer>
   <p>© 2025 Nithin Veerendranath K — Mechanical Engineer</p>
   <p>Texas A&amp;M University · College Station, TX</p>
 </footer>
-
 </div>
-
 <script>
 const revealEls = document.querySelectorAll('.reveal');
 const io = new IntersectionObserver(entries => {
